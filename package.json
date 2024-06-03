@@ -1,0 +1,17 @@
+{
+  "name": "plantpro",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js --ignore client",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd .. && cd client && npm i",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kelvin Lau",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
