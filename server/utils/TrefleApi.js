@@ -6,9 +6,11 @@ class TrefleApi {
     this.key = process.env.TREFLE_TOKEN;
   }
 
-  async getSomePlants() {
+  async getSomePlants(page) {
     try {
-      const response = await fetch(`${this.url}/plants?token=${this.key}`);
+      const response = await fetch(
+        `${this.url}/plants?token=${this.key}&page=${page}`
+      );
       const json = await response.json();
       return json;
     } catch (err) {
