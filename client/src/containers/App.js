@@ -4,8 +4,10 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Signup from "../components/Signup";
-import "./App.css";
+import Search from "../components/Search";
 import Login from "../components/Login";
+import UserPlants from "../components/UserPlants";
+import "./App.css";
 import { isLoggedIn } from "../helpers/helpers";
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
         <Route exact path="/" element={<Main />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/plants" element={<UserPlants />} />
       </Routes>
       <Footer />
     </div>

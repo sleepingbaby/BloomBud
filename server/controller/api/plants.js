@@ -13,4 +13,15 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/search/:plant", async (req, res) => {
+  const plant = req.params.plant;
+
+  try {
+    const data = await trefleApi.findPlants(plant);
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ message: err });
+  }
+});
+
 module.exports = router;

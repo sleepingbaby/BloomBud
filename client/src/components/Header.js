@@ -1,6 +1,10 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLeaf,
+  faMagnifyingGlass,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Header({ loggedIn, setLoggedIn }) {
   const handleLogout = async (event) => {
@@ -44,16 +48,23 @@ function Header({ loggedIn, setLoggedIn }) {
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/search">
                   <FontAwesomeIcon icon={faMagnifyingGlass} /> Search
                 </a>
               </li>
               {loggedIn ? (
-                <li className="nav-item">
-                  <a className="nav-link" href="/" onClick={handleLogout}>
-                    <FontAwesomeIcon icon={faUser} /> Logout
-                  </a>
-                </li>
+                <Fragment>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/plants">
+                      <FontAwesomeIcon icon={faLeaf} /> My Plants
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/" onClick={handleLogout}>
+                      <FontAwesomeIcon icon={faUser} /> Logout
+                    </a>
+                  </li>
+                </Fragment>
               ) : (
                 <li className="nav-item">
                   <a className="nav-link" href="/login">

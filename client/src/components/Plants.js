@@ -1,6 +1,6 @@
 import React from "react";
 
-const Plants = ({ plants }) => {
+const Plants = ({ plants, name }) => {
   return (
     <div className="my-3">
       <div className="container">
@@ -13,11 +13,17 @@ const Plants = ({ plants }) => {
             >
               <img
                 className="card-img-top"
-                src={plant.image_url}
+                src={
+                  plant.image_url ||
+                  "https://thumbs.dreamstime.com/b/cute-cartoon-potted-plant-green-leaves-cute-face-cute-cartoon-potted-plant-green-leaves-cute-face-beautiful-158475948.jpg"
+                }
                 alt={plant.common_name}
               />
               <div className="card-body">
-                <h5 className="card-title">{plant.common_name}</h5>
+                <h5 className="card-title">
+                  {plant.common_name ||
+                    name[0].toUpperCase() + name.slice(1, name.length)}
+                </h5>
                 <p className="card-description">{plant.scientific_name}</p>
               </div>
             </div>

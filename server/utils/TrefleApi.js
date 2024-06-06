@@ -2,7 +2,7 @@ require("dotenv").config();
 
 class TrefleApi {
   constructor() {
-    this.url = "https://trefle.io/api/v1/";
+    this.url = "https://trefle.io/api/v1";
     this.key = process.env.TREFLE_TOKEN;
   }
 
@@ -10,6 +10,18 @@ class TrefleApi {
     try {
       const response = await fetch(
         `${this.url}/plants?token=${this.key}&page=${page}`
+      );
+      const json = await response.json();
+      return json;
+    } catch (err) {
+      console.err({ message: err });
+    }
+  }
+
+  async findPlants(plant) {
+    try {
+      const response = await fetch(
+        `${this.url}/plants/search?token=${this.key}&q=${plant}`
       );
       const json = await response.json();
       return json;
