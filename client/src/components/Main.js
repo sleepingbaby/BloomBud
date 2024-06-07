@@ -8,9 +8,12 @@ const Main = () => {
   useEffect(() => {
     const getPlants = async () => {
       try {
-        const response = await fetch("http://localhost:3001/plants", {
-          method: "GET",
-        });
+        const response = await fetch(
+          "bloombud-0013ffd7d655.herokuapp.com/plants",
+          {
+            method: "GET",
+          }
+        );
 
         if (response.ok) {
           const results = await response.json();

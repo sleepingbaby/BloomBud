@@ -13,12 +13,15 @@ const Signup = () => {
         "Content-Type": "application/json",
       };
 
-      const response = await fetch("http://localhost:3001/users/signup", {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify({ email, password }),
-        credentials: "include",
-      });
+      const response = await fetch(
+        "bloombud-0013ffd7d655.herokuapp.com/users/signup",
+        {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify({ email, password }),
+          credentials: "include",
+        }
+      );
 
       if (response.ok) {
         alert("Signup successful! Redirecting to login page...");

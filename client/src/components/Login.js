@@ -12,12 +12,15 @@ const Login = () => {
         "Content-Type": "application/json",
       };
 
-      const response = await fetch("http://localhost:3001/users/login", {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify({ email, password }),
-        credentials: "include",
-      });
+      const response = await fetch(
+        "bloombud-0013ffd7d655.herokuapp.com/users/login",
+        {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify({ email, password }),
+          credentials: "include",
+        }
+      );
 
       if (response.ok) {
         window.location.replace("/");

@@ -14,11 +14,14 @@ function Header({ loggedIn, setLoggedIn }) {
       const headers = {
         "Content-Type": "application/json",
       };
-      const response = await fetch("http://localhost:3001/users/logout", {
-        method: "GET",
-        headers: headers,
-        credentials: "include",
-      });
+      const response = await fetch(
+        "bloombud-0013ffd7d655.herokuapp.com/users/logout",
+        {
+          method: "GET",
+          headers: headers,
+          credentials: "include",
+        }
+      );
       if (response.ok) {
         setLoggedIn(false);
         window.location.replace("/");
