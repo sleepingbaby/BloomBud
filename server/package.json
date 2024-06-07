@@ -1,15 +1,11 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "engines": {
-    "node": "20.10.0",
-    "npm": "10.8.1"
   },
   "author": "Kelvin Lau",
   "license": "ISC",
