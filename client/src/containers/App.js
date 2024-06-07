@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -29,17 +30,19 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-      <Routes>
-        <Route exact path="/" element={<Main />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/search" element={<Search loggedIn={loggedIn} />} />
-        <Route path="/plants" element={<UserPlants loggedIn={loggedIn} />} />
-      </Routes>
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/search" element={<Search loggedIn={loggedIn} />} />
+          <Route path="/plants" element={<UserPlants loggedIn={loggedIn} />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
