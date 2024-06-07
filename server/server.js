@@ -14,12 +14,14 @@ const db = mongoose.connection;
 db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Connected to MongoDB"));
 
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000",
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://bloombud-0013ffd7d655.herokuapp.com/",
+    credentials: true,
+    method: ["GET", "POST", "DELETE", "PUT"],
+    allowedHeaders: ["Authorization", "Content-Type"],
+  })
+);
 
 app.use(cookieParser());
 
@@ -32,6 +34,9 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
   });
 }
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 app.use(routes);
 
