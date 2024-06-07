@@ -3,7 +3,7 @@ import Plants from "./Plants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const Search = () => {
+const Search = ({ loggedIn }) => {
   const [searchedPlant, setSearchedPlant] = useState("");
   const [plants, setPlants] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -53,7 +53,7 @@ const Search = () => {
         {loading ? (
           <div>Loading...</div>
         ) : plants.length > 0 ? (
-          <Plants plants={plants} name={searchedPlant} />
+          <Plants plants={plants} name={searchedPlant} loggedIn={loggedIn} />
         ) : (
           <div> Nothing to see here</div>
         )}

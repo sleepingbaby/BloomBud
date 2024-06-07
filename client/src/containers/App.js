@@ -12,15 +12,21 @@ import { isLoggedIn } from "../helpers/helpers";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function checkLoginStatus() {
       const status = await isLoggedIn();
       setLoggedIn(status);
+      setLoading(false);
     }
 
     checkLoginStatus();
   }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="App">
@@ -29,8 +35,8 @@ function App() {
         <Route exact path="/" element={<Main />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/plants" element={<UserPlants />} />
+        <Route path="/search" element={<Search loggedIn={loggedIn} />} />
+        <Route path="/plants" element={<UserPlants loggedIn={loggedIn} />} />
       </Routes>
       <Footer />
     </div>
