@@ -1,6 +1,6 @@
 const Plants = ({ plants, loggedIn, user }) => {
   const deletePlant = async (plant) => {
-    const url = `http://localhost:3001/plants/delete/${plant._id}`;
+    const url = `https://bloombud-0013ffd7d655.herokuapp.com/plants/delete/${plant._id}`;
 
     try {
       const response = await fetch(url, {
@@ -31,12 +31,15 @@ const Plants = ({ plants, loggedIn, user }) => {
       const headers = {
         "Content-Type": "application/json",
       };
-      const response = await fetch("http://localhost:3001/plants/add", {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(newPlant),
-        credentials: "include",
-      });
+      const response = await fetch(
+        "bloombud-0013ffd7d655.herokuapp.com/plants/add",
+        {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(newPlant),
+          credentials: "include",
+        }
+      );
 
       if (response.ok) {
         alert("Plant Added Successfully");

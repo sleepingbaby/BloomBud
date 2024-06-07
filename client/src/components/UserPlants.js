@@ -8,7 +8,7 @@ const UserPlants = ({ loggedIn }) => {
     const getUserPlants = async () => {
       try {
         const response = await fetch(
-          "bloombud-0013ffd7d655.herokuapp.com/plants/userplants",
+          "https://bloombud-0013ffd7d655.herokuapp.com/plants/userplants",
           {
             method: "GET",
             credentials: "include",

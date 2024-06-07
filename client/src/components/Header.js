@@ -15,7 +15,7 @@ function Header({ loggedIn, setLoggedIn }) {
         "Content-Type": "application/json",
       };
       const response = await fetch(
-        "bloombud-0013ffd7d655.herokuapp.com/users/logout",
+        "https://bloombud-0013ffd7d655.herokuapp.com/users/logout",
         {
           method: "GET",
           headers: headers,

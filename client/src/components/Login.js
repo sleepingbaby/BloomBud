@@ -13,7 +13,7 @@ const Login = () => {
       };
 
       const response = await fetch(
-        "bloombud-0013ffd7d655.herokuapp.com/users/login",
+        "https://bloombud-0013ffd7d655.herokuapp.com/users/login",
         {
           method: "POST",
           headers: headers,

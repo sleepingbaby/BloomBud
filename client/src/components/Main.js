@@ -9,7 +9,7 @@ const Main = () => {
     const getPlants = async () => {
       try {
         const response = await fetch(
-          "bloombud-0013ffd7d655.herokuapp.com/plants",
+          "https://bloombud-0013ffd7d655.herokuapp.com/plants",
           {
             method: "GET",
           }

@@ -12,7 +12,7 @@ const Search = ({ loggedIn }) => {
     setLoading(true);
     try {
       const response = await fetch(
-        `bloombud-0013ffd7d655.herokuapp.com/plants/search/${plant}`,
+        `https://bloombud-0013ffd7d655.herokuapp.com/plants/search/${plant}`,
         {
           method: "GET",
         }

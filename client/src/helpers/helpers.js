@@ -4,11 +4,14 @@ export async function isLoggedIn() {
       "Content-Type": "application/json",
     };
 
-    const response = await fetch("http://localhost:3001/users/authenticate", {
-      method: "GET",
-      headers: headers,
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://bloombud-0013ffd7d655.herokuapp.com/users/authenticate",
+      {
+        method: "GET",
+        headers: headers,
+        credentials: "include",
+      }
+    );
 
     if (response.ok) {
       return true;

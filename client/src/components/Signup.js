@@ -14,7 +14,7 @@ const Signup = () => {
       };
 
       const response = await fetch(
-        "bloombud-0013ffd7d655.herokuapp.com/users/signup",
+        "https://bloombud-0013ffd7d655.herokuapp.com/users/signup",
         {
           method: "POST",
           headers: headers,
